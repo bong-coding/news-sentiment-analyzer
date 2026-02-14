@@ -17,7 +17,7 @@ app = FastAPI(title="News Sentiment Analyzer")
 # CORS 설정 (Vue에서 접근 가능하도록)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["http://localhost:5173", "http://localhost:3000","https://news-sentiment-analyzer-woad.vercel.app/","https://*.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -161,4 +161,4 @@ def get_sample_urls():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
